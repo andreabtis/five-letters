@@ -115,15 +115,12 @@ class _StadisticsPageState extends State<StadisticsPage> {
                   ),
                 ),
                 Positioned(
-                  left: kIsWeb
-                      ? _Constants.imageWebLeft
-                      : _Constants.imageMobileLeft,
                   right: kIsWeb
                       ? _Constants.imageWebRight
                       : _Constants.imageMobileRight,
                   child: Image.asset(
                     _Constants.birdImage,
-                    scale: kIsWeb ? 1 : 2,
+                    scale: kIsWeb ? 1.5 : 3,
                   ),
                 ),
               ],
@@ -298,7 +295,8 @@ class _StadisticsPageState extends State<StadisticsPage> {
                 kIsWeb
                     ? Container()
                     : const SizedBox(
-                        height: _Constants.headerTitleMobileTopSpace),
+                        height: _Constants.headerTitleMobileTopSpace,
+                      ),
                 FutureBuilder<String?>(
                     future: StadisticsPageModel.getUserName(),
                     builder: (context, snapshot) {
