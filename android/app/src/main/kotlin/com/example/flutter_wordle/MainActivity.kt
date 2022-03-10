@@ -1,4 +1,4 @@
-package com.example.flutter_wordle
+package com.basetis.fiveletters
 
 import io.flutter.embedding.android.FlutterActivity
 
