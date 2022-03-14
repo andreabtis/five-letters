@@ -17,8 +17,4 @@ All packages are official from [pub dev](https://pub.dev)
 - [html](https://pub.dev/packages/html)
 - [english_words](https://pub.dev/packages/english_words)
 
-## Youtube video
-
-//TODO: add the url!
-
 ![playstore](https://user-images.githubusercontent.com/41053869/157235112-8cd1ea5b-7673-46ce-8aca-d12d07d8d554.png)
