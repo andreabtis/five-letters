@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../styles/custom_text_styles.dart';
-import '../../../utils/shared_preferences.dart';
 
-class StadisticsPageModel {
+class StatisticsPageModel {
   static const String userName = 'Andrea Serrano';
   static const String hashtag = '#';
-  static const String title = 'STADISTICS';
 
   static const String playedTitle = 'Played';
   static const String streakTitle = 'Current Streak %';
@@ -25,14 +23,5 @@ class StadisticsPageModel {
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
     );
-  }
-
-  static Future<String?> getUserName() async {
-    return await SharedPrefs.getUserName();
-  }
-
-  static Future<String?> getRankingPosition() async {
-    //TODO: add the real position (use the index from the ranking list)
-    return await SharedPrefs.getUserName();
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wordle/features/game/game_page.dart';
-import 'package:flutter_wordle/features/stadistics/ui/stadistics_page.dart';
+import 'package:flutter_wordle/features/statistics/ui/statistics_page.dart';
 import 'package:flutter_wordle/style/colors.dart';
 import 'package:flutter_wordle/styles/custom_elevated_button_styles.dart';
 import 'package:flutter_wordle/styles/custom_text_styles.dart';
@@ -35,7 +35,7 @@ class _Strings {
   static const String winTitle = "Victory!";
   static const String loseTitle = "Defeat";
   static const String firstButton = "play again";
-  static const String secondButton = "stadistics";
+  static const String secondButton = "statistics";
   static const String helperText = "* Used to save the score";
   static const String hintText = "Enter your name";
   static const String prefixGuessedWord = "The word was:";
@@ -187,7 +187,7 @@ class _FinishGameDialogState extends State<FinishGameDialog> {
                     isUserAlreadySaved ? null : saveUserName();
                     return NavigationUtils.pushAndRemoveTill(
                       context,
-                      const StadisticsPage(),
+                      const StatisticsPage(),
                     );
                   },
                   style: CustomElevatedButtonStyles.secondaryStyle,

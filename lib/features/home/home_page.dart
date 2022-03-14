@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wordle/features/game/game_page.dart';
-import 'package:flutter_wordle/features/stadistics/ui/stadistics_page.dart';
+import 'package:flutter_wordle/features/statistics/ui/statistics_page.dart';
 import 'package:flutter_wordle/features/tutorial/ui/tutorial_page.dart';
 import 'package:flutter_wordle/utils/navigation_utils.dart';
 import 'package:flutter_wordle/utils/shared_preferences.dart';
@@ -71,10 +71,10 @@ class _HomePageState extends State<HomePage> {
                   builder: (context, snapshot) {
                     return snapshot.hasData
                         ? CustomElevatedButton(
-                            label: Strings.ranking,
+                            label: Strings.statistics,
                             onPressed: () => NavigationUtils.push(
                               context,
-                              const StadisticsPage(),
+                              const StatisticsPage(),
                             ),
                             style: CustomElevatedButtonStyles.defaultStyle
                                 .copyWith(
