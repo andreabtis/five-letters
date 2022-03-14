@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wordle/features/tutorial/models/second_page_model.dart';
+import 'package:flutter_wordle/utils/strings.dart';
 
 import '../../../styles/custom_text_styles.dart';
 
@@ -89,7 +90,7 @@ class _SecondTutorialPageState extends State<SecondTutorialPage> {
                   style: CustomTextStyles.defaultFontStyle,
                 ),
                 TextSpan(
-                  text: SecondTutorialPageModel.blueDescription6,
+                  text: Strings.statistics,
                   style: CustomTextStyles.blueFontStyle,
                 ),
               ],

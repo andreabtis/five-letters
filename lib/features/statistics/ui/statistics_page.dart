@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wordle/features/home/home_page.dart';
-import 'package:flutter_wordle/features/stadistics/models/stadistics_page_model.dart';
+import 'package:flutter_wordle/features/statistics/models/statistics_page_model.dart';
 import 'package:flutter_wordle/styles/font_size.dart';
 import 'package:flutter_wordle/styles/custom_text_styles.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_wordle/utils/navigation_utils.dart';
 import 'package:flutter_wordle/utils/shared_preferences.dart';
+import 'package:flutter_wordle/utils/strings.dart';
 import 'package:flutter_wordle/utils/ui_helpers.dart';
 
 import '../../../style/colors.dart';
@@ -16,8 +17,6 @@ class _Constants {
   static const double mobileRatioHeight = 0.3;
   static const double bodyHeightRatio = 0.66;
 
-  static const double imageWebLeft = 683;
-  static const double imageMobileLeft = 140;
   static const double imageWebRight = 226;
   static const double imageMobileRight = 0.0;
 
@@ -59,14 +58,14 @@ class _Constants {
   static const String trophyImage = 'assets/trophy.png';
 }
 
-class StadisticsPage extends StatefulWidget {
-  const StadisticsPage({Key? key}) : super(key: key);
+class StatisticsPage extends StatefulWidget {
+  const StatisticsPage({Key? key}) : super(key: key);
 
   @override
-  _StadisticsPageState createState() => _StadisticsPageState();
+  _StatisticsPageState createState() => _StatisticsPageState();
 }
 
-class _StadisticsPageState extends State<StadisticsPage> {
+class _StatisticsPageState extends State<StatisticsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,8 +138,8 @@ class _StadisticsPageState extends State<StadisticsPage> {
             height: kIsWeb
                 ? _Constants.titleTopSpaceWeb
                 : _Constants.titleTopSpaceMobile),
-        StadisticsPageModel.buildText(
-          StadisticsPageModel.title,
+        StatisticsPageModel.buildText(
+          Strings.statistics,
           CustomTextStyles.defaultFontStyle.copyWith(
             fontSize: kIsWeb ? FontSize.sixtyFour : FontSize.thirtyTwo,
           ),
@@ -169,12 +168,12 @@ class _StadisticsPageState extends State<StadisticsPage> {
                               return const CustomSpinner();
                             } else {
                               return _buildScoreCard(
-                                StadisticsPageModel.buildText(
+                                StatisticsPageModel.buildText(
                                   snapshot.data.toString(),
                                   CustomTextStyles.scoreHugeFontStyle,
                                 ),
-                                StadisticsPageModel.buildText(
-                                  StadisticsPageModel.playedTitle,
+                                StatisticsPageModel.buildText(
+                                  StatisticsPageModel.playedTitle,
                                   CustomTextStyles.scoreHugeFontStyle,
                                 ),
                               );
@@ -196,12 +195,12 @@ class _StadisticsPageState extends State<StadisticsPage> {
                               return const CustomSpinner();
                             } else {
                               return _buildScoreCard(
-                                StadisticsPageModel.buildText(
+                                StatisticsPageModel.buildText(
                                   snapshot.data!.round().toString(),
                                   CustomTextStyles.scoreHugeFontStyle,
                                 ),
-                                StadisticsPageModel.buildText(
-                                  StadisticsPageModel.winTitle,
+                                StatisticsPageModel.buildText(
+                                  StatisticsPageModel.winTitle,
                                   CustomTextStyles.scoreHugeFontStyle,
                                 ),
                               );
@@ -222,13 +221,13 @@ class _StadisticsPageState extends State<StadisticsPage> {
                           return const CustomSpinner();
                         } else {
                           return _buildScoreCard(
-                            StadisticsPageModel.buildText(
+                            StatisticsPageModel.buildText(
                               snapshot.data!.round().toString(),
                               CustomTextStyles.scoreRegularFontStyle
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
-                            StadisticsPageModel.buildText(
-                              StadisticsPageModel.playedTitle,
+                            StatisticsPageModel.buildText(
+                              StatisticsPageModel.playedTitle,
                               CustomTextStyles.scoreRegularFontStyle.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -246,14 +245,14 @@ class _StadisticsPageState extends State<StadisticsPage> {
                           return const CustomSpinner();
                         } else {
                           return _buildScoreCard(
-                            StadisticsPageModel.buildText(
+                            StatisticsPageModel.buildText(
                               snapshot.data!.round().toString(),
                               CustomTextStyles.scoreRegularFontStyle.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            StadisticsPageModel.buildText(
-                              StadisticsPageModel.winTitle,
+                            StatisticsPageModel.buildText(
+                              StatisticsPageModel.winTitle,
                               CustomTextStyles.scoreRegularFontStyle.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -298,14 +297,14 @@ class _StadisticsPageState extends State<StadisticsPage> {
                         height: _Constants.headerTitleMobileTopSpace,
                       ),
                 FutureBuilder<String?>(
-                    future: StadisticsPageModel.getUserName(),
+                    future: SharedPrefs.getUserName(),
                     builder: (context, snapshot) {
                       return Flexible(
                         child: SizedBox(
                           width: kIsWeb
                               ? _Constants.userNameWebWidth
                               : _Constants.userNameMobileWidth,
-                          child: StadisticsPageModel.buildText(
+                          child: StatisticsPageModel.buildText(
                             snapshot.data ?? '',
                             kIsWeb
                                 ? CustomTextStyles.whiteTitleFontStyle.copyWith(

@@ -14,7 +14,7 @@ import 'package:flutter_wordle/widgets/generic_keyboard.dart';
 import 'package:flutter_wordle/widgets/letter_model.dart';
 import '../../utils/strings.dart';
 import '../../widgets/generic_letter_widget.dart';
-import '../stadistics/ui/custom_spinner.dart';
+import '../statistics/ui/custom_spinner.dart';
 import 'game.dart';
 
 class _Constants {

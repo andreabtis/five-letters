@@ -23,9 +23,8 @@ class SecondTutorialPageModel {
   static const String description5 =
       ' key to check if you have guessed the word';
   static const String description6 =
-      'To track your previous games stadistics, you can check your win ratio and the games you have played in ';
+      'To track your previous games statistics, you can check your win ratio and the games you have played in ';
   static const String blueDescription5 = 'ENTER';
-  static const String blueDescription6 = 'Stadistics';
 
   static List<String> letters = ['ABOUT'];
 
