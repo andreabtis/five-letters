@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wordle/widgets/letter_model.dart';
 import '../features/game/keyboard.dart';
 import '../style/colors.dart';
@@ -65,8 +66,7 @@ class _GenericKeyboardState extends State<GenericKeyboard> {
 
     return RawKeyboardListener(
       onKey: (e) {
-        //TODO: investigate a bit RawKeyUpEvent pls
-        if (e.runtimeType.toString() == 'RawKeyUpEvent') {
+        if (e.runtimeType == RawKeyUpEvent) {
           Keyboard.onPressKeyOnKeyboard(
             logicalKey: e.logicalKey,
             onLetter: (string, integer) => widget.onLetterCallback(
